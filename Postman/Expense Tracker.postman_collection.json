@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "9ac478f8-cb08-4c36-a530-61e84d03ec45",
+		"name": "Expense Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36614064"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Create Users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Himanshu\",\r\n    \"lastName\":\"Tanwar\",\r\n    \"email\":\"himanshutanwar45@gmail.com\",\r\n    \"password\":\"12345678\",\r\n    \"conPass\":\"12345678\",\r\n    \"mobile\":\"9716635288\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/createuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"createuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"himanshutanwar45@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/loginuser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"loginuser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Expense",
+			"item": [
+				{
+					"name": "Add Expenses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMzM1MDEzYTZhMDgxNWFlNzU1Njk1IiwiZnVsbE5hbWUiOiJIaW1hbnNodSBUYW53YXIiLCJlbWFpbCI6ImhpbWFuc2h1dGFud2FyNDVAZ21haWwuY29tIiwibW9iaWxlIjo5NzE2NjM1Mjg4fSwiaWF0IjoxNzIxOTc1NDczfQ.nJRfr1DqX2_1_Xw9hqETl2CPZwBi5I33a1EiPG8pJ-I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Heyyy\",\r\n    \"amount\":\"7\",\r\n    \"date\":\"2024-07-26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/expense/addexpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"expense",
+								"addexpense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMzM1MDEzYTZhMDgxNWFlNzU1Njk1IiwiZnVsbE5hbWUiOiJIaW1hbnNodSBUYW53YXIiLCJlbWFpbCI6ImhpbWFuc2h1dGFud2FyNDVAZ21haWwuY29tIiwibW9iaWxlIjo5NzE2NjM1Mjg4fSwiaWF0IjoxNzIxOTc1NDczfQ.nJRfr1DqX2_1_Xw9hqETl2CPZwBi5I33a1EiPG8pJ-I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"66a228770156cf932ab58d52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/expense/getexpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"expense",
+								"getexpense"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Date Expense",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjZhMjI4NzcwMTU2Y2Y5MzJhYjU4ZDUyIiwiZnVsbE5hbWUiOiJIaW1hbnNodSBUYW53YXIiLCJlbWFpbCI6ImhpbWFuc2h1dGFud2FyNDVAZ21haWwuY29tIiwibW9iaWxlIjo5NzE2NjM1Mjg4fSwiaWF0IjoxNzIxOTcwNTI4fQ.m_u3gbNkq4WMlnti1Plm3Exp1QuNuEtti78cfLSNbck",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/expense/currentdateexpense",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"expense",
+								"currentdateexpense"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
