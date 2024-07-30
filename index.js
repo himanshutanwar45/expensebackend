@@ -16,6 +16,8 @@ app.use('/api/auth', require('./routes/Login/RLogin'))
 
 app.use('/api/expense', require('./routes/Expense/RAddExpense'))
 
+app.use('/api/expense', require('./routes/Expense/RReports.js'))
+
 app.listen(port,()=>{
     console.log(`Server running on port ${port}`)
 })
