@@ -15,7 +15,7 @@ router.post('/createuser', [
     body('lastName', 'Enter Last Name').isLength({ min: 1 }),
     body('email', 'Enter a valid email').isEmail(),
     body('password', 'Enter a valid password').isLength({ min: 8 }),
-    body('mobile', 'Enter a valid mobile number').isLength({ min: 10 })
+    body('mobile', 'Enter 10 digit number').isLength({ min: 10, max:10 })
 
 ], async (req, res) => {
 
